@@ -1,12 +1,9 @@
 #include<stdio.h>
-
 /**
-  * main - Prints text using puts() method
-  * return: "Programming is like building a multilingual puzzle
+  *main - returns 0 and prints text using puts method
   */
 int main(void)
 {
-	puts("\"Programming is like building
-			a multilingual puzzle\n");
+	puts("\"Programming is like building a multilingual puzzle\n");
 	return (0);
 }

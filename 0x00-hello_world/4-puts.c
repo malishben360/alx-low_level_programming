@@ -1,6 +1,9 @@
 #include<stdio.h>
+
 /**
-  *main - returns 0 and prints text using puts method
+  * main - Prints text using puts method
+  * output: "Programming is like buildding a multilingual puzzle 
+  * return: 0
   */
 int main(void)
 {

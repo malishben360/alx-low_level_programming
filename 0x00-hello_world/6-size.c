@@ -1,8 +1,5 @@
 #include<stdio.h>
 
-/**
-  * main - returns 0 and prints the various types on the computer ii is compiled and run on
-  */
 int main(void)
 {
 	printf("Size of a char: %d bytes(s)", (int) sizeof(char));

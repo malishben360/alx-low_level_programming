@@ -13,8 +13,8 @@ int print_last_digit(int n)
 {
 	int last_digit, abs;
 
-	abs = (n < 0) ? (n * -1) : n;
+	abs = (n < 0) ? n * -1 : n;
 	last_digit = abs % 10;
-	_putchar(last_digit + '0');
+	_putchar('0' + last_digit);
 	return (last_digit);
 }

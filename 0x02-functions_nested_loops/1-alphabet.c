@@ -1,20 +1,6 @@
 #include"main.h"
 
 /**
-  * main - Entry point
-  *
-  * Description: Print lowcase alphabets from a-z
-  *
-  * Return: Always 0 (Success)
-  */
-
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-
-/**
   * print_alphabet - Helper function
   *
   * Description: Print string using the _putchar function
@@ -24,11 +10,11 @@ int main(void)
 
 void print_alphabet(void)
 {
-	int c;
+	int i;
 
-	for (c = 97; c <= 122; c++)
+	for (i = 97; i <= 122; i++)
 	{
-		_putchar((int) c);
+		_putchar((int) i);
 	}
 	_putchar(10);
 }

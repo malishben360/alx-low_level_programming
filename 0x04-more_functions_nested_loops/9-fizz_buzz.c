@@ -14,14 +14,28 @@ int main(void)
 	{
 		f = i % 3;
 		b = i % 5;
-		if ((f == 0) && (b == 0))
-			printf("FizzBuzz ");
-		else if (f == 0)
-			printf("Fizz ");
-		else if (b == 0)
-			printf("Buzz ");
+		if (i != 100)
+		{
+			if ((f == 0) && (b == 0))
+				printf("FizzBuzz ");
+			else if (f == 0)
+				printf("Fizz ");
+			else if (b == 0)
+				printf("Buzz ");
+			else
+				printf("%d ", i);
+		}
 		else
-			printf("%d ", i);
+		{
+			if ((f == 0) && (b == 0))
+				printf("FizzBuzz");
+			else if (f == 0)
+				printf("Fizz");
+			else if (b == 0)
+				printf("Buzz");
+			else
+				printf("%d", i);
+		}
 	}
 	printf("\n");
 	return (0);

@@ -17,7 +17,7 @@ int main(void)
 }
 
 /**
-  * print_factor - Compute the prime factor of a number
+  * prime_factor - Compute the prime factor of a number
   *
   * Description: Compute and print the highest prime factor
   *

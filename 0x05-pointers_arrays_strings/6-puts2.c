@@ -13,7 +13,9 @@ void puts2(char *str)
 {
 	int i;
 
-	_putchar(*str);
+	if (*str != '\0')
+		_putchar(*str);
+
 	i = 1;
 	while (*(str + i) != '\0')
 	{

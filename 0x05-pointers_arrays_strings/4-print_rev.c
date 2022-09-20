@@ -11,21 +11,24 @@
   */
 void print_rev(char *s)
 {
-	int len;
-	int i;
+	long int len;
+	long int i;
 	char c;
 
-	len = _strlen(s);
-	for (i = len; i >= 0; i--)
+	len = get_len(s);
+	if (len != 0)
 	{
-		c = *(s + i);
-		_putchar(c);
+		for (i = len; i >= 0; i--)
+		{
+			c = s[i];
+			_putchar(c);
+		}
 	}
 	_putchar(10);
 }
 
 /**
-  * _strlen - compute the length of a string
+  * get_len - compute the length of a string
   *
   * @str: The string whose length is to be computed
   *
@@ -33,12 +36,12 @@ void print_rev(char *s)
   *
   * Return: Always the length of a string
   */
-int _strlen(char *str)
+long int get_len(char *str)
 {
-	int i;
+	long int i;
 
 	i = 0;
-	while (*(str + i) != 0)
+	while (str[i] != '\0')
 		i++;
-	return (i);
+	return ((long int) i);
 }

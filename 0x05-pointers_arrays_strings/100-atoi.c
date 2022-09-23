@@ -11,7 +11,9 @@
   */
 int _atoi(char *str)
 {
-	int i, j, num, sign;
+	int i;
+	int num;
+	int sign;
 
 	num = 0;
 	sign = 1;
@@ -19,22 +21,8 @@ int _atoi(char *str)
 	if (i != -1)
 	{
 		if (str[i - 1] == '-')
-			sign = -1;
-
-		j = i - 2;
-		while (j >= 0)
 		{
-			if (str[j] == '-')
-			{
-				sign = sign * -1;
-				break;
-			}
-			else if (str[j] == '+')
-				break;
-			else if (str[j] == 32)
-				j--;
-			else
-				break;
+			sign = -1;
 		}
 		while (str[i] != '\0')
 		{

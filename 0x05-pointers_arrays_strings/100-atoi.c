@@ -11,27 +11,35 @@
   */
 int _atoi(char *str)
 {
-	int i;
-	int num;
-	int sign;
+	int i, j, num, sign;
 
 	num = 0;
 	sign = 1;
 	i = _fdigit(str);
-
 	if (i != -1)
 	{
 		if (str[i - 1] == '-')
-		{
 			sign = -1;
-		}
 
+		j = i - 2;
+		while (j >= 0)
+		{
+			if (str[j] == '-')
+			{
+				sign = sign * -1;
+				break;
+			}
+			else if (str[j] == '+')
+				break;
+			else if (str[j] == 32)
+				j--;
+			else
+				break;
+		}
 		while (str[i] != '\0')
 		{
 			if (str[i] >= 48 && str[i] <= 57)
-			{
 				num = num * 10 + str[i] - '0';
-			}
 			i++;
 		}
 
@@ -39,9 +47,7 @@ int _atoi(char *str)
 		return (num);
 	}
 	else
-	{
 		return (0);
-	}
 }
 
 /**

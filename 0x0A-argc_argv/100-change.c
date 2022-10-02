@@ -13,8 +13,8 @@
   */
 int main(int argc, char *argv[])
 {
-	int mod;
-	int div;
+	long int mod;
+	long int div;
 
 	if (argc == 2)
 	{
@@ -25,11 +25,11 @@ int main(int argc, char *argv[])
 
 			if (mod)
 			{
-				printf("%d\n", div + 1);
+				printf("%ld\n", div + 1);
 			}
 			else
 			{
-				printf("%d\n", div);
+				printf("%ld\n", div);
 			}
 
 			return (0);

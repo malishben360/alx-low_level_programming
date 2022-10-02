@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
   * main - Entry point
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] >= 48 && *argv[i] <= 57)
+			if (_atoi_error(argv[i]))
 			{
 				sum += atoi(argv[i]);
 			}
@@ -41,4 +42,28 @@ int main(int argc, char *argv[])
 
 		return (0);
 	}
+}
+
+/**
+  * _atoi_error - check for non digit character in a
+  * string
+  *
+  * @str: the string to check
+  *
+  * Descriprion: compare if all char in str are digit
+  * characters
+  *
+  * Return: Always 1 (Success), 0 (Failure).
+  */
+int _atoi_error(char *str)
+{
+	while (*str)
+	{
+		if (!(*str >= 48 && *str <= 57))
+		{
+			return (0);
+		}
+		str++;
+	}
+	return (1);
 }

@@ -25,6 +25,11 @@ int main(int argc, char *argv[])
 	if (!(argc == 1 || argc > 2))
 	{
 		k = atoi(argv[1]);
+		if (k < 0)
+		{
+			printf("0\n");
+			return (0);
+		}
 		mincnt = min_coins(coins, m, k);
 		printf("%d\n", mincnt);
 

@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
+
+int min_coins(int *coins, int m, int k);
 
 /**
   * main - Entry point
@@ -13,38 +16,71 @@
   */
 int main(int argc, char *argv[])
 {
-	long int mod;
-	long int div;
+	int mincnt;
+	int k;
 
-	if (argc == 2)
+	int m = 5;
+	int coins[5] = {25, 10, 5, 2, 1};
+
+	if (!(argc == 1 || argc > 2))
 	{
-		if (!(atoi(argv[1]) < 0))
-		{
-			mod = atoi(argv[1]) % 25;
-			div = atoi(argv[1]) / 25;
+		k = atoi(argv[1]);
+		mincnt = min_coins(coins, m, k);
+		printf("%d\n", mincnt);
 
-			if (mod)
-			{
-				printf("%ld\n", div + 1);
-			}
-			else
-			{
-				printf("%ld\n", div);
-			}
-
-			return (0);
-		}
-		else
-		{
-			printf("%d\n", 0);
-
-			return (0);
-		}
+		return (0);
 	}
 	else
 	{
 		printf("Error\n");
 
 		return (1);
+	}
+}
+
+/**
+  * min_coins - compute the minimun change of a given
+  * amount
+  *
+  * @coins: array of coins (denominations)
+  * @k: amount to be change
+  * @m: size of array coins
+  *
+  * Description: using recursion as brute-force
+  * approach by reduce and conquare
+  *
+  * Return: Always positive integer (Success),
+  * -1 (Failure).
+  */
+int min_coins(int *coins, int m, int k)
+{
+	int i;
+	int mincnt;
+	int curcnt;
+
+	if (k == 0)
+	{
+		return (0);
+	}
+
+	mincnt = 256;
+	for (i = 0; i < m; i++)
+	{
+		if (coins[i] <= k)
+		{
+			curcnt = min_coins(coins, m, k - coins[i]);
+			if (curcnt != 256 && (curcnt + 1) < mincnt)
+			{
+				mincnt = curcnt + 1;
+			}
+		}
+	}
+	if (mincnt == 256)
+	{
+		return (-1);
+	}
+	else
+	{
+		return (mincnt);
 	}
 }

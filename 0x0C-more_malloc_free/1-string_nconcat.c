@@ -22,13 +22,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i;
 	char *ptr;
 
-	if ((s1 == NULL && *s1 == '\0') && (s2 == NULL && *s2 == '\0'))
+	if ((s1 == NULL || *s1 == '\0') && (s2 == NULL || *s2 == '\0'))
 	{
 		ptr = malloc(sizeof(char));
 		ptr[0] = '\0';
 		return (ptr);
 	}
-	else if ((s1 != NULL && *s1 != '\0') && (s2 != NULL && *s2 != '\0'))
+	else if ((s1 != NULL || *s1 != '\0') && (s2 != NULL || *s2 != '\0'))
 	{
 		for (i = 0; s2[i] != '\0'; i++)
 
@@ -42,7 +42,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		}
 		exit(98);
 	}
-	else if (s1 != NULL && *s1 != '\0')
+	else if (s1 != NULL || *s1 != '\0')
 	{
 		return (s1_null(s1));
 	}

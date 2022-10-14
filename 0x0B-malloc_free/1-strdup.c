@@ -15,35 +15,25 @@
 char *_strdup(char *str)
 {
 	int i;
-	char *ptr = "\n";
-	char *check = "";
+	char *ptr;
 
-	if (str != NULL)
+	if (str != NULL && *str)
 	{
-		if (*str == *check)
-		{
-			return (ptr);
-		}
 		for (i = 0; str[i] != '\0'; i++)
 
-		ptr = (char *)malloc(i * sizeof(*ptr));
+		ptr = malloc((i + 1) * sizeof(char));
 		if (ptr != NULL)
 		{
 			i = 0;
-			while (*str)
+			while(str[i] != '\0')
 			{
-				ptr[i] = *str;
+				ptr[i] = str[i];
 				i++;
-				str++;
 			}
-
+			ptr[i] = '\0';
 			return (ptr);
 		}
-
 		return (NULL);
 	}
-	else
-	{
-		return (NULL);
-	}
+	return (NULL);
 }

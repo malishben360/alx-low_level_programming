@@ -73,7 +73,7 @@ char *concat_null(char *s)
 			i++;
 		}
 		ptr[i] = '\0';
-		return (NULL);
+		return (ptr);
 	}
 	return (NULL);
 }

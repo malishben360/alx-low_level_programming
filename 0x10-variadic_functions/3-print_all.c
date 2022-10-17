@@ -18,7 +18,7 @@ void print_all(const char * const format, ...)
 	va_list ptr;
 
 	va_start(ptr, format);
-	i = j = 0;
+	i = 0;
 	while (i < strlen(format))
 	{
 		switch (format[i])
@@ -36,12 +36,12 @@ void print_all(const char * const format, ...)
 				str = va_arg(ptr, char *);
 				printf("%s", str);
 				break;
-			default:
-				printf("");
 		}
-		while ((j < (strlen(code) - 1)) && (format[i] == code[j]))
+		j = 0;
+		while (j < (strlen(code) - 1))
 		{
-			printf(", ");
+			if (code[j] == format[i])
+				printf(", ");
 			j++;
 		}
 		i++;

@@ -11,15 +11,13 @@
   */
 void print_all(const char * const format, ...)
 {
-	unsigned int i;
-	unsigned int j;
-	char *str;
-	char code[] = "cifs";
+	unsigned int i, j;
+	char *str, code[] = "cifs";
 	va_list ptr;
 
 	va_start(ptr, format);
 	i = 0;
-	while (i < strlen(format))
+	while (i < strlen(format) && format != NULL)
 	{
 		switch (format[i])
 		{

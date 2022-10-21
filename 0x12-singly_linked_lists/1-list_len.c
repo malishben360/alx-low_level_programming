@@ -1,13 +1,12 @@
 #include "lists.h"
 
 /**
-  * print_list - traverse a singly linked list, printts
-  * the nodes data
+  * list_len - traverse a singly linked list
   * @h: pointer to the first node
   *
   * Return: Always the list length.
   */
-size_t print_list(const list_t *h)
+size_t list_len(const list_t *h)
 {
 	unsigned int count;
 	const list_t *ptr;
@@ -19,10 +18,6 @@ size_t print_list(const list_t *h)
 	while (ptr != NULL)
 	{
 		count++;
-		if (ptr->str != NULL)
-			printf("[%d] %s\n", ptr->len, ptr->str);
-		else
-			printf("[%d] %s\n", 0, "(nil)");
 		ptr = ptr->next;
 	}
 	return (count);

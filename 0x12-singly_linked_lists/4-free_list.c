@@ -12,7 +12,10 @@ void free_list(list_t *head)
 	list_t *temp;
 
 	if (head == NULL)
+	{
+		printf("Freed !");
 		exit(98);
+	}
 	temp = head;
 	while (temp != NULL)
 	{

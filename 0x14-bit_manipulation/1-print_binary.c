@@ -26,5 +26,4 @@ void print_binary(unsigned long int n)
 	}
 	if (n == 0)
 		_putchar(48);
-	_putchar(10);
 }

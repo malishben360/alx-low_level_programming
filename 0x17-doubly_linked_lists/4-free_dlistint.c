@@ -20,6 +20,4 @@ void free_dlistint(dlistint_t *head)
 		head = tmp;
 		tmp = NULL;
 	}
-
-	exit(EXIT_SUCCESS);
 }
